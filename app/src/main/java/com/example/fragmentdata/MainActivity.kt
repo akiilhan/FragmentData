@@ -43,7 +43,7 @@ public class MainActivity : AppCompatActivity() {
         var transaction = manager.beginTransaction()
         transaction.add(R.id.container, fragmentA, "fragA")
         transaction.commit()
-        //Log.e("aki", "calistir komutu")
+        Log.e("aki", "calistir komutu")
 
 
     }
