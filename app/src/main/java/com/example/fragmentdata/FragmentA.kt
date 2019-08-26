@@ -13,6 +13,7 @@ import java.util.zip.Inflater
 
 class Fragment_A : Fragment() {
     var hesaplabuton: Button? = null
+
     var sonuc = tvSonuc
     var sayi1 = 0
     var sayi2 = 0
@@ -25,10 +26,9 @@ class Fragment_A : Fragment() {
 
         var inflater: View = inflater.inflate(R.layout.fragment_a, container, false)
 
-        val bundle = arguments
 
-        val sayi1 = bundle?.getInt("birinci", 0)
-        val sayi2 = bundle?.getInt("ikinci", 0)
+//        val sayi1 = bundle?.getInt("birinci", 0)
+  //      val sayi2 = bundle?.getInt("ikinci", 0)
 
         hesaplabuton = inflater.findViewById<Button>(R.id.btnHesapla)
         sonuc = inflater.findViewById(R.id.tvSonuc)
@@ -42,6 +42,12 @@ class Fragment_A : Fragment() {
 
         }
         return inflater
+
+    }
+
+    fun setData(birinciSayi: Int, ikinciSayi: Int) {
+        this.sayi1=birinciSayi
+        this.sayi2=ikinciSayi
 
     }
 

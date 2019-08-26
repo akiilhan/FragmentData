@@ -13,6 +13,9 @@ public class MainActivity : AppCompatActivity() {
 
     var sayi1: EditText? = null
     var sayi2: EditText? = null
+
+
+   // val button1: Button = findViewById(R.id.btnHesapla)
     //lateinit var fragmenteGonder: Button
     var manager = supportFragmentManager
 
@@ -20,10 +23,10 @@ public class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        sayi1 = findViewById(R.id.birinci_sayi)
-        sayi2 = findViewById(R.id.ikinci_Sayi)
+         sayi1 = findViewById(R.id.birinci_sayi)
+         sayi2 = findViewById(R.id.ikinci_Sayi)
         //fragmenteGonder = findViewById(R.id.btnFragmentegonder) as Button
-        //manager=supportFragmentManager
+        manager=supportFragmentManager
     }
 
     fun calistir(view: View) {
@@ -38,7 +41,8 @@ public class MainActivity : AppCompatActivity() {
 //        args.putInt("ikinci", ikinciSayi)
 //        fragmentA.arguments = args
 
-        //fragmentA.setData(int birinciSayi,int:ikinciSayi)
+
+        fragmentA.setData(birinciSayi,ikinciSayi)
 
         var transaction = manager.beginTransaction()
         transaction.add(R.id.container, fragmentA, "fragA")
