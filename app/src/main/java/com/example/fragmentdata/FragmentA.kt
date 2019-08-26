@@ -18,6 +18,8 @@ class Fragment_A : Fragment() {
     var sayi1 = 0
     var sayi2 = 0
 
+
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -36,7 +38,7 @@ class Fragment_A : Fragment() {
 
 
         hesaplabuton?.setOnClickListener {
-            var sonuc1 = sayi1!! +sayi2!!
+            var sonuc1 = sayi1 +sayi2
             sonuc.text = "SONUC =$sonuc1"
 
 
@@ -45,11 +47,13 @@ class Fragment_A : Fragment() {
 
     }
 
-    fun setData(birinciSayi: Int, ikinciSayi: Int) {
+    fun sendData(birinciSayi: Int, ikinciSayi: Int) {
         this.sayi1=birinciSayi
         this.sayi2=ikinciSayi
 
     }
+
+
 
 
 }

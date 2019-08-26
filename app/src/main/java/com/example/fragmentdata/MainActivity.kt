@@ -4,18 +4,15 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
-import android.widget.Button
 import android.widget.EditText
-import android.widget.Toast
-import kotlinx.android.synthetic.main.activity_main.*
 
 public class MainActivity : AppCompatActivity() {
 
-    var sayi1: EditText? = null
-    var sayi2: EditText? = null
+    lateinit var sayi1:EditText
+    lateinit var sayi2:EditText
 
 
-   // val button1: Button = findViewById(R.id.btnHesapla)
+    //var sayi1: EditText = findViewById(R.id.birinci_sayi)
     //lateinit var fragmenteGonder: Button
     var manager = supportFragmentManager
 
@@ -25,6 +22,7 @@ public class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
          sayi1 = findViewById(R.id.birinci_sayi)
          sayi2 = findViewById(R.id.ikinci_Sayi)
+
         //fragmenteGonder = findViewById(R.id.btnFragmentegonder) as Button
         manager=supportFragmentManager
     }
@@ -42,7 +40,8 @@ public class MainActivity : AppCompatActivity() {
 //        fragmentA.arguments = args
 
 
-        fragmentA.setData(birinciSayi,ikinciSayi)
+        fragmentA.sendData(birinciSayi,ikinciSayi)
+
 
         var transaction = manager.beginTransaction()
         transaction.add(R.id.container, fragmentA, "fragA")
@@ -51,4 +50,14 @@ public class MainActivity : AppCompatActivity() {
 
 
     }
+
+    inner class Ogrenci{
+
+        var ogrNo:Int=0
+        var ad:String?=null
+    }
+
+
 }
+
+
