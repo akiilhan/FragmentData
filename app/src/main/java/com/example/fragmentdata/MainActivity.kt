@@ -6,7 +6,7 @@ import android.util.Log
 import android.view.View
 import android.widget.EditText
 
-public class MainActivity : AppCompatActivity() {
+ class MainActivity : AppCompatActivity() {
 
     lateinit var sayi1:EditText
     lateinit var sayi2:EditText
@@ -51,11 +51,7 @@ public class MainActivity : AppCompatActivity() {
 
     }
 
-    inner class Ogrenci{
 
-        var ogrNo:Int=0
-        var ad:String?=null
-    }
 
 
 }
